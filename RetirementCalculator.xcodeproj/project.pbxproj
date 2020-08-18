@@ -111,7 +111,6 @@
 				B799DA494112A3054A4E4A01 /* Pods-RetirementCalculatorTests.debug.xcconfig */,
 				86AF48355B6DF817766B31FB /* Pods-RetirementCalculatorTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
