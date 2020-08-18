@@ -42,11 +42,24 @@ class ViewController: UIViewController {
         guard let currentSavings = Float(self.savingsTextField.text!) else { return }
         guard let interestRate = Float(self.interestRateTextField.text!) else { return }
 
-        self.resultLabel.text = "If you wanna save $\(monthlyInvestement) every monyj for \(plannedRetirementAge - currentAge) years, and invest that money plus your current investement of \(currentSavings) at a \(interestRate)% anual interst rate, you will have $x by the time you are \(plannedRetirementAge)"
+        let retirementAmount = calculateRetiementAmount(currentAge, plannedRetirementAge, monthlyInvestement, currentSavings, interestRate)
+
+        self.resultLabel.text = "If you wanna save $\(monthlyInvestement) every monyj for \(plannedRetirementAge - currentAge) years, and invest that money plus your current investement of \(currentSavings) at a \(interestRate)% anual interst rate, you will have $\(retirementAmount) by the time you are \(plannedRetirementAge)"
 
         let propreties = ["current_age": String(currentAge),
                           "planned_retirement_age": String(plannedRetirementAge)]
         MSAnalytics.trackEvent("calculate_retirement_amount", withProperties: propreties)
+    }
+
+    func calculateRetiementAmount(_ currentAge: Int, _ retirementAge: Int, _ monthlyInvestement: Float, _ currentSavings: Float, _ interestRate: Float) -> Double {
+        let monthsUntilRetirement = (retirementAge - currentAge) * 12
+        var retirementAmount = Double(currentSavings) * pow(Double(1 + interestRate / 100), Double(monthsUntilRetirement))
+
+        for i in 1...monthsUntilRetirement {
+            let monthlyRate = interestRate / 100 / 12
+            retirementAmount += Double(monthlyInvestement) * pow(Double(1 + monthlyRate), Double(i))
+        }
+        return retirementAmount
     }
 }
 
