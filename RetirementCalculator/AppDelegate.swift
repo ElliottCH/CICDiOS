@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // connect your app to App Center
 
-        MSAppCenter.start("8a1bec10-8f80-4e49-8245-471e4d079b88", withServices: [MSAnalytics.self, MSCrashes.self])
+        MSAppCenter.start("dc39dab2-4ccb-4d14-abae-5b053ba87542", withServices: [MSAnalytics.self, MSCrashes.self])
 
         return true
     }
