@@ -16,7 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var retirementAgeTextField: UITextField!
     @IBOutlet weak var interestRateTextField: UITextField!
     @IBOutlet weak var savingsTextField: UITextField!
-
+    @IBOutlet weak var resultLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -37,6 +38,12 @@ class ViewController: UIViewController {
         //MSCrashes.generateTestCrash()
         guard let currentAge = Int(self.currentAgeTextField.text!) else { return }
         guard let plannedRetirementAge = Int(self.retirementAgeTextField.text!) else { return }
+        guard let monthlyInvestement = Float(self.monthlyInvestmenentTextField.text!) else { return }
+        guard let currentSavings = Float(self.savingsTextField.text!) else { return }
+        guard let interestRate = Float(self.interestRateTextField.text!) else { return }
+
+        self.resultLabel.text = "If you wanna save $\(monthlyInvestement) every monyj for \(plannedRetirementAge - currentAge) years, and invest that money plus your current investement of \(currentSavings) at a \(interestRate)% anual interst rate, you will have $x by the time you are \(plannedRetirementAge)"
+
         let propreties = ["current_age": String(currentAge),
                           "planned_retirement_age": String(plannedRetirementAge)]
         MSAnalytics.trackEvent("calculate_retirement_amount", withProperties: propreties)
