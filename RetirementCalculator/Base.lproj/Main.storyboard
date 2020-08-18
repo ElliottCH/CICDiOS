@@ -69,6 +69,12 @@
                                     <action selector="calculateButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fE-YY-n2x"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Daf-Tu-4Vk">
+                                <rect key="frame" x="186" y="392" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -78,7 +84,9 @@
                             <constraint firstItem="5rt-os-YhX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="8" id="K8w-Rw-smW"/>
                             <constraint firstItem="KOC-94-Wec" firstAttribute="top" secondItem="5rt-os-YhX" secondAttribute="bottom" constant="8" id="VLp-CP-dCR"/>
                             <constraint firstItem="0pP-5L-oRo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="Vvm-CE-Qkm"/>
+                            <constraint firstItem="Daf-Tu-4Vk" firstAttribute="top" secondItem="KOC-94-Wec" secondAttribute="bottom" constant="60" id="YVS-Gv-2Ey"/>
                             <constraint firstItem="QNI-c2-ijo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="YqB-UP-5KU"/>
+                            <constraint firstItem="Daf-Tu-4Vk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Zxr-QK-KAd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jxU-6Y-q8d" secondAttribute="trailing" constant="8" id="afN-7F-vbG"/>
                             <constraint firstItem="jxU-6Y-q8d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="bLP-hx-Ek0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TWW-r2-ywl" secondAttribute="trailing" constant="8" id="fQV-WQ-Wew"/>
@@ -97,6 +105,7 @@
                         <outlet property="currentAgeTextField" destination="TWW-r2-ywl" id="fcz-Xr-g07"/>
                         <outlet property="interestRateTextField" destination="QNI-c2-ijo" id="LD0-X9-rCd"/>
                         <outlet property="monthlyInvestmenentTextField" destination="0pP-5L-oRo" id="Zb4-oL-pt3"/>
+                        <outlet property="resultLabel" destination="Daf-Tu-4Vk" id="gZP-qh-RxT"/>
                         <outlet property="retirementAgeTextField" destination="jxU-6Y-q8d" id="J0p-VE-hEK"/>
                         <outlet property="savingsTextField" destination="5rt-os-YhX" id="QGH-yp-bEH"/>
                     </connections>
